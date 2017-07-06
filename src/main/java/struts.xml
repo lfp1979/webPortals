@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<!-- 	<constant name="struts.devMode" value="true"/> -->
+	
+	<package name="admin" extends="struts-default" namespace="/admin">
+	
+        <interceptors>
+			<interceptor name="login" class="userLoginInterceptor"/>
+			<interceptor-stack name="loginInterceptor">
+				<interceptor-ref name="login"/>
+				<interceptor-ref name="defaultStack"/>
+			</interceptor-stack>
+		</interceptors>
+		<global-results>
+	    	<result name="exception">exception.jsp</result>
+	    </global-results>
+	    <global-exception-mappings>
+	    	<exception-mapping result="exception" exception="org.springframework.dao.DataIntegrityViolationException"/>
+	    </global-exception-mappings>
+		<action name="Article_*" class="articleAdmin" method="{1}">
+			<interceptor-ref name="loginInterceptor"/>
+			<result name="login" >login/login.jsp</result>
+			<result name="list">articleList.jsp</result>
+			<result name="saveOrUpdate" type="redirectAction">
+				<param name="encode">true</param>
+				 <param name="actionName">Article_edit?id=${article.id}&amp;msg=${msg}</param>
+			</result>
+			<result name="add">articleEdit.jsp</result>
+			<result name="edit">articleEdit.jsp</result>
+			<result name="input">articleEdit.jsp</result>
+		</action>
+		<action name="Class_*" class="classAdmin" method="{1}">
+			<interceptor-ref name="loginInterceptor"/>
+			<result name="login">login/login.jsp</result>
+			<result name="list">classManage.jsp</result>
+			<result name="input">classManage.jsp</result>
+		</action>
+		<action name="Login_*" class="login" method="{1}">
+			<result name="success" type="chain" >Article_list</result>
+			<result name="login">login/login.jsp</result>
+			<result name="logout" type="stream">
+				<param name="contentType">text/html;charset=UTF-8</param>
+				<param name="inputName">inputStream</param>
+			</result>
+			<result name="index" type="redirect">../Article_index</result>
+			<result name="prePage" type="redirect">${prePage}</result>
+		</action>
+	    <action name="Upload" class="uploadFile" method="upload">
+			<result >upload.jsp</result>
+			
+		</action>
+	</package>
+	<package name="myStructs" extends="struts-default" namespace="/">
+	<action name="Article_*" class="articleAction" method="{1}">
+			<result name="index">index.jsp</result>
+			<result name="listByOrder">articleList.jsp</result>
+			<result name="getClassArticles">listArticles.jsp</result>
+			<result name="show">articleShow.jsp</result>
+		</action>
+	</package>
+</struts>    

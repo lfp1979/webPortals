@@ -1,0 +1,50 @@
+*{margin:0; padding:0}
+#nav{
+	line-height:41px;
+	background-color:#106B61;
+	height:41px;
+	font-size:1em;
+	color:#FFF;
+	overflow:hidden;
+}
+a:visited,a:hover, a:focus{text-decoration: none !important;}
+a {color:black !important;text-decoration: none}
+#nav a {color:white !important}
+#nav li{float:left; list-style:none; margin:0 0.5%}
+#nav li:first-child {margin:0;padding:0;}
+#nav li:first-child img{margin:0;padding:0;}
+#nav img{margin:10px 1px 0 1px}
+#logo {background-image:url(images/index5_02.gif);
+		width:19%;
+		height:87px;
+		float:left;
+		background-size:cover;
+		}
+#logo img{position:relative;top:10px;left:30px}
+#header {border-top:#106B61 solid medium;
+	overflow:hidden;
+	border-bottom:#69F solid medium;
+	margin:0 7px 
+	}
+#mar{overflow:hidden;height:46px;line-height:46px}
+#mar marquee{ float:right;width:88%;}
+#welcome{background-image:url(../images/index5_15.gif);text-align: right;font-size:12px;font-family: Arial,Helvetica,sans-serif;  }
+
+body{margin:auto !important;width:970px;}
+.cell{float:left;width:33.3%;}
+.inner{border:solid thin #AEE1DC;height:200px; margin:5px;}
+.right .inner{height:413px;}
+.bottom { width:100%;}
+.title{background-image:url(../images/index5_37.gif);
+			position:relative;
+			height:28px;
+			line-height:28px;
+	}
+.img-right{position:absolute;right:0;}
+.title span:first-child{position:absolute;left:5px;}
+.title span + span{position:absolute;right:35px;}
+li{white-space:nowrap;text-overflow:ellipsis; overflow:hidden}
+.bottom ul{ display:table; width:100%; height:80%}
+.bottom li{display:table-cell; vertical-align:middle; text-align:center}
+#logo1 {position:static}
+	
