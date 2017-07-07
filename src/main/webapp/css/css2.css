@@ -19,11 +19,13 @@ a:hover {
 }
 .hui{color:#666666;}
 .hong{color:#FF0000;}
-div.wrapper{border:solid thin #AEE1DC; margin:5px; float:left;}
+div.wrapper{border:solid thin #AEE1DC; margin:5px; float:left;min-height: 400px;position: relative;}
 .w650{width:650px}
 .w250{width:250px}
 .hcenter{text-align:center}
-div.w250 li{padding: 5px 0;}
+div.wrapper li{padding: 5px 0;}
+.right{position: absolute;right: 5px;}
+.left{margin-right: 25px;}
 .black14b {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 14px;
