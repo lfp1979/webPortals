@@ -7,6 +7,20 @@
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
+   <filter>
+    <display-name>CacheFilter</display-name>
+    <filter-name>CacheFilter</filter-name>
+    <filter-class>ok3w.filter.cache.CacheFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>CacheFilter</filter-name>
+    <url-pattern>/Article_index</url-pattern>
+    <url-pattern>/admin/Article_update.action</url-pattern>
+    <url-pattern>/admin/Article_saveOrUpdate.action</url-pattern>
+    <url-pattern>/admin/Class_del.action</url-pattern>
+    <url-pattern>/admin/Class_saveOrUpdate.action</url-pattern>
+ 
+  </filter-mapping>
   <filter>
     <display-name>Struts2</display-name>
     <filter-name>Struts2</filter-name>
@@ -20,4 +34,5 @@
     <param-name>contextConfigLocation</param-name>
     <param-value>classpath:applicationContext.xml</param-value>
   </context-param>
+ 
 </web-app>
